@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foo-hello
+  labels:
+    app: foo
+    mode: hello
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: foo
+      mode: hello
+  template:
+    metadata:
+      labels:
+        app: foo
+        mode: hello
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
