@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: foo-bar
+  namespace: bar-test
   labels:
     app: foo
     mode: bar
