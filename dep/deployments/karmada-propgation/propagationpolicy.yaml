@@ -1,12 +1,12 @@
 apiVersion: policy.karmada.io/v1alpha1
-kind: ClusterPropagationPolicy
+kind: PropagationPolicy
 metadata:
-  name: example-policy
+  name: nginx-propagation
+  namespace: bar-test
 spec:
-  resourceSelectors:
-    - apiVersion: apps/v1
+  resourceSelectors: 
+    - apiVersion: apps/v1    
       kind: Deployment
-      namespace: bar-test
   placement:
     clusterAffinity:
       clusterNames:
